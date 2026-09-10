@@ -25,17 +25,18 @@
       </a>
 
       <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
-        <a href="#academia">Academia</a>
-        <a href="#nextgen">Next Gen</a>
-        <a href="#corporativo">Corporativo</a>
-        <a href="#members">Members</a>
-        <a href="#media">Media</a>
-        <a href="#members" class="btn btn-teal nav-cta">Sumate como Member</a>
+        <a href="academia.html">Academia</a>
+        <a href="next-gen.html">Next Gen</a>
+        <a href="corporativo.html">Corporativo</a>
+        <a href="members.html">Members</a>
+        <a href="media.html">Media</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="members.html" class="btn btn-teal nav-cta">Sumate como Member</a>
       </nav>
 
       <div class="header-actions">
-        <a href="#members" class="btn btn-ghost-light header-login">Ingresar</a>
-        <a href="#members" class="btn btn-teal header-cta">Sumate como Member</a>
+        <a href="members.html" class="btn btn-teal header-cta">Sumate como Member</a>
       </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -564,11 +565,13 @@
 
       <nav class="footer-nav" aria-label="Secciones">
         <h4>Ecosistema</h4>
-        <a href="#academia">CEP Academia</a>
-        <a href="#nextgen">CEP Next Gen</a>
-        <a href="#corporativo">CEP Corporativo</a>
-        <a href="#members">CEP Members</a>
-        <a href="#media">CEP Media</a>
+        <a href="academia.html">CEP Academia</a>
+        <a href="next-gen.html">CEP Next Gen</a>
+        <a href="corporativo.html">CEP Corporativo</a>
+        <a href="members.html">CEP Members</a>
+        <a href="media.html">CEP Media</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
       </nav>
 
       <div class="footer-contact">
@@ -588,47 +591,6 @@
     </div>
   </footer>
 
-  <script>
-    // Menú mobile
-    var toggle = document.getElementById('navToggle');
-    var nav = document.getElementById('mainNav');
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.classList.toggle('active', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        nav.classList.remove('open');
-        toggle.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Sombra del header al hacer scroll
-    var header = document.querySelector('.site-header');
-    window.addEventListener('scroll', function () {
-      header.classList.toggle('scrolled', window.scrollY > 12);
-    });
-
-    // Tabs de Academia
-    var tabs = document.querySelectorAll('#academiaTabs .tab');
-    var panels = document.querySelectorAll('#academia .tab-panel');
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        var name = tab.getAttribute('data-tab');
-        tabs.forEach(function (t) {
-          var active = t === tab;
-          t.classList.toggle('is-active', active);
-          t.setAttribute('aria-selected', active ? 'true' : 'false');
-        });
-        panels.forEach(function (p) {
-          var match = p.getAttribute('data-panel') === name;
-          p.classList.toggle('is-active', match);
-          p.hidden = !match;
-        });
-      });
-    });
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
