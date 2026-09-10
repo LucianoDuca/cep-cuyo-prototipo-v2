@@ -406,27 +406,51 @@ p  { margin: 0; }
 /* =========================================================
    FOOTER
    ========================================================= */
-.site-footer { background: var(--navy-deep); color: rgba(255,255,255,.8); }
-.footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1.2fr; gap: 44px; padding-top: 64px; padding-bottom: 48px; }
-.footer-membrete { background: #fff; border-radius: var(--radius-sm); padding: 14px 16px; display: inline-block; max-width: 320px; }
-.footer-membrete img { width: 100%; }
-.footer-brand > p { margin-top: 18px; font-size: .92rem; color: rgba(255,255,255,.62); max-width: 340px; }
-.footer-social { display: flex; gap: 12px; margin-top: 20px; }
-.footer-social a { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.08); color: #fff; transition: background .2s var(--ease), transform .2s var(--ease); }
-.footer-social a svg { width: 20px; height: 20px; }
+.site-footer { background: var(--navy-deep); color: rgba(255,255,255,.72); }
+.footer-top { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.4fr; gap: 44px; padding: 70px 0 46px; }
+
+/* Marca */
+.footer-logo { display: inline-flex; align-items: center; gap: 12px; }
+.footer-logo img { width: 46px; height: 46px; object-fit: contain; }
+.footer-logo-text strong { display: block; font-family: var(--font-head); color: #fff; font-size: 1.06rem; letter-spacing: .2px; }
+.footer-logo-text strong em { color: var(--teal); font-style: normal; }
+.footer-logo-text small { color: rgba(255,255,255,.55); font-size: .72rem; letter-spacing: .3px; }
+.footer-desc { margin: 18px 0 0; font-size: .92rem; color: rgba(255,255,255,.58); max-width: 320px; }
+
+/* Sello 20 años (CSS, alto contraste) */
+.footer-seal { display: inline-flex; align-items: center; gap: 11px; margin-top: 22px; padding: 8px 18px 8px 12px; border: 1px solid rgba(18,165,148,.45); border-radius: 999px; background: rgba(18,165,148,.08); }
+.footer-seal .seal-num { font-family: var(--font-head); font-weight: 800; font-size: 1.7rem; color: var(--teal); line-height: 1; }
+.footer-seal .seal-txt { font-size: .72rem; line-height: 1.2; color: #fff; text-transform: uppercase; letter-spacing: .1em; }
+.footer-seal .seal-txt em { display: block; color: rgba(255,255,255,.55); font-style: normal; letter-spacing: .06em; }
+
+/* Columnas */
+.footer-col { display: flex; flex-direction: column; gap: 12px; }
+.footer-col h4 { color: #fff; font-family: var(--font-head); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
+.footer-col a { color: rgba(255,255,255,.66); font-size: .95rem; width: fit-content; transition: color .2s var(--ease); }
+.footer-col a:hover { color: var(--teal); }
+.footer-connect p { font-size: .9rem; color: rgba(255,255,255,.6); margin: 0 0 4px; }
+
+/* Newsletter */
+.footer-form { display: flex; gap: 8px; margin-top: 6px; }
+.footer-form input { flex: 1; min-width: 0; font: inherit; font-size: .9rem; padding: 11px 15px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: #fff; transition: border-color .2s var(--ease), background .2s var(--ease); }
+.footer-form input::placeholder { color: rgba(255,255,255,.45); }
+.footer-form input:focus { outline: none; border-color: var(--teal); background: rgba(255,255,255,.1); }
+.footer-form .btn { --btn-pad: .5em; padding: 0 18px; font-size: 1.15rem; line-height: 1; }
+.footer-note { font-size: .82rem; color: var(--teal); margin-top: 10px; }
+
+/* Redes */
+.footer-social { display: flex; gap: 10px; margin-top: 18px; }
+.footer-social a { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.08); color: #fff; transition: background .2s var(--ease), transform .2s var(--ease); }
+.footer-social a svg { width: 19px; height: 19px; }
 .footer-social a:hover { background: var(--teal-strong); transform: translateY(-3px); }
-.footer-nav, .footer-contact { display: flex; flex-direction: column; gap: 10px; }
-.footer-nav h4, .footer-contact h4 { color: #fff; font-family: var(--font-head); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; }
-.footer-nav a { color: rgba(255,255,255,.7); font-size: .95rem; transition: color .2s var(--ease); width: fit-content; }
-.footer-nav a:hover { color: var(--teal); }
-.footer-contact p { font-size: .95rem; color: rgba(255,255,255,.7); }
-.footer-contact a { color: var(--teal); }
-.footer-contact span { color: #fff; font-weight: 600; }
-.footer-badge { width: 150px; margin-top: 14px; border-radius: 8px; }
-.footer-bottom { box-shadow: inset 0 1px 0 rgba(255,255,255,.10); padding: 20px 0; }
-.footer-bottom .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-.footer-bottom span { font-size: .84rem; color: rgba(255,255,255,.5); }
-.proto-tag { color: var(--teal) !important; padding: .3em .9em; font-weight: 600; border: 1px solid rgba(18,165,148,.35); border-radius: 999px; }
+
+/* Barra inferior */
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 22px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.footer-bottom > span { font-size: .84rem; color: rgba(255,255,255,.5); }
+.footer-bottom-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.footer-bottom-right a { font-size: .84rem; color: rgba(255,255,255,.6); }
+.footer-bottom-right a:hover { color: var(--teal); }
+.proto-tag { color: var(--teal); font-size: .78rem; padding: .32em .9em; font-weight: 600; border: 1px solid rgba(18,165,148,.35); border-radius: 999px; }
 
 /* =========================================================
    RESPONSIVE
@@ -472,6 +496,8 @@ p  { margin: 0; }
   .about-figure img { width: 190px; }
   .timeline { overflow-x: auto; padding-bottom: 8px; }
   .tl-step { min-width: 84px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px 40px; }
+  .footer-brand, .footer-connect { grid-column: 1 / -1; }
 }
 
 /* Teléfono */
@@ -496,8 +522,8 @@ p  { margin: 0; }
   .social-hub { gap: 12px; }
   .social-btn { flex: 1 1 140px; justify-content: center; }
   .li-stats { padding: 16px 0; }
-  .footer-inner { grid-template-columns: 1fr; gap: 30px; padding-top: 52px; }
-  .footer-bottom .container { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .footer-top { grid-template-columns: 1fr; gap: 30px; padding: 52px 0 36px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 
 @media (max-width: 380px) {

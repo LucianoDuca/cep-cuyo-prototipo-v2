@@ -70,4 +70,15 @@
       form.reset();
     });
   }
+
+  // Newsletter del footer (demo, sin backend)
+  var nl = document.getElementById('newsletterForm');
+  if (nl) {
+    nl.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var note = document.getElementById('newsletterNote');
+      if (note) { note.hidden = false; }
+      nl.reset();
+    });
+  }
 })();
