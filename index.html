@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CEP Cuyo — Centro de Estudios Prospectivos de Cuyo</title>
-  <meta name="description" content="Centro de Estudios Prospectivos de Cuyo. Prospectiva y estudios de futuros: anticipamos escenarios, transformamos decisiones. Academia, consultoría, membresías y red internacional de alianzas." />
+  <title>CEP Cuyo 3.0 — Centro de Estudios Prospectivos de Cuyo</title>
+  <meta name="description" content="CEP Cuyo 3.0: ecosistema digital de prospectiva y estudios de futuros. Academia, Next Gen, Corporativo, Members y Media — anticipamos escenarios, transformamos decisiones." />
   <!-- Tipografías: Inter (cuerpo, estilo San Francisco/iPhone) + Sora (títulos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
       <a href="#top" class="brand">
         <img src="assets/img/logo-header-cep.png" alt="Logo CEP Cuyo" class="brand-logo" />
         <span class="brand-text">
-          <strong>CEP Cuyo</strong>
+          <strong>CEP Cuyo <em>3.0</em></strong>
           <small>Centro de Estudios Prospectivos</small>
         </span>
       </a>
@@ -30,11 +30,13 @@
         <a href="#corporativo">Corporativo</a>
         <a href="#members">Members</a>
         <a href="#media">Media</a>
-        <a href="#nosotros">Nosotros</a>
         <a href="#members" class="btn btn-teal nav-cta">Sumate como Member</a>
       </nav>
 
-      <a href="#members" class="btn btn-teal header-cta">Sumate como Member</a>
+      <div class="header-actions">
+        <a href="#members" class="btn btn-ghost-light header-login">Ingresar</a>
+        <a href="#members" class="btn btn-teal header-cta">Sumate como Member</a>
+      </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -44,18 +46,25 @@
 
   <!-- ===================== HERO ===================== -->
   <section class="hero">
-    <div class="hero-glow"></div>
+    <div class="hero-bg" aria-hidden="true">
+      <!-- Silueta de cordillera (evoca Cuyo / Los Andes) -->
+      <svg class="hero-mountains" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path d="M0,320 L0,190 L180,120 L320,180 L470,90 L620,170 L780,70 L940,160 L1100,100 L1260,175 L1440,110 L1440,320 Z" fill="rgba(18,165,148,.10)"/>
+        <path d="M0,320 L0,230 L200,170 L360,215 L520,150 L700,210 L860,140 L1030,205 L1200,160 L1380,215 L1440,190 L1440,320 Z" fill="rgba(2,38,74,.55)"/>
+      </svg>
+    </div>
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
       <span class="eyebrow">Think tank de prospectiva · Mendoza, Argentina</span>
       <h1>Anticipamos escenarios,<br /><span class="accent">transformamos decisiones</span></h1>
       <p class="hero-sub">
-        Somos el Centro de Estudios Prospectivos de Cuyo: investigación aplicada en
-        estudios de futuros, formación académica y consultoría estratégica, con una red
-        de alianzas internacionales que respalda cada proyecto.
+        El Think Tank líder en investigación estratégica y análisis prospectivo de la
+        región de Cuyo. Un ecosistema que integra formación, comunidad, consultoría y
+        conocimiento abierto.
       </p>
       <div class="hero-actions">
-        <a href="#corporativo" class="btn btn-teal btn-lg">Explorar líneas de trabajo</a>
-        <a href="#members" class="btn btn-ghost btn-lg">Conocer las membresías</a>
+        <a href="#academia" class="btn btn-teal btn-lg">Descubrir programas</a>
+        <a href="#members" class="btn btn-ghost btn-lg">Hacerse miembro</a>
       </div>
       <div class="hero-stats">
         <div><strong>20</strong><span>años de trayectoria</span></div>
@@ -65,166 +74,312 @@
     </div>
   </section>
 
-  <!-- ===================== ACADEMIA ===================== -->
-  <section class="section" id="academia">
+  <!-- ===================== 1. ACADEMIA ===================== -->
+  <section class="section" id="academia" style="--accent:#2563eb; --accent-soft:rgba(37,99,235,.12)">
     <div class="container">
       <div class="section-head">
         <div class="section-head-text">
-          <span class="kicker">CEP Academia</span>
+          <span class="kicker">01 · CEP Academia</span>
           <h2>Formación en prospectiva y estudios de futuros</h2>
-          <p>
-            Un espacio académico propio para desarrollar pensamiento anticipatorio,
-            metodologías de escenarios y liderazgo prospectivo, en múltiples formatos
-            según tu disponibilidad y nivel.
-          </p>
+          <p>Contenido académico propio en cuatro modalidades, del formato ágil al programa de especialización.</p>
         </div>
         <img src="assets/img/logo-academia-cep.png" alt="Logo Academia CEP" class="section-brand" />
       </div>
 
-      <div class="grid grid-4">
-        <article class="card">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6l9-3 9 3-9 3-9-3z"/><path d="M21 6v6"/><path d="M6 9v5c0 1.5 3 3 6 3s6-1.5 6-3V9"/></svg>
-          </span>
-          <h3>Masterclass</h3>
-          <p>Sesiones intensivas con referentes internacionales sobre metodologías y casos reales de prospectiva.</p>
+      <div class="tabs" id="academiaTabs" role="tablist" aria-label="Modalidades de la Academia">
+        <button class="tab is-active" data-tab="masterclass" role="tab" aria-selected="true">Masterclass</button>
+        <button class="tab" data-tab="talleres" role="tab" aria-selected="false">Talleres</button>
+        <button class="tab" data-tab="diplomados" role="tab" aria-selected="false">Diplomados</button>
+        <button class="tab" data-tab="micromaster" role="tab" aria-selected="false">Micromaster</button>
+      </div>
+
+      <!-- MASTERCLASS -->
+      <div class="grid grid-3 tab-panel is-active" data-panel="masterclass">
+        <article class="course-card">
+          <span class="course-thumb tg-1"><span class="course-tag">Masterclass</span></span>
+          <div class="course-body">
+            <h3>Metodologías de escenarios</h3>
+            <p>Cápsula ágil sobre construcción de escenarios y su uso en la toma de decisiones estratégicas.</p>
+            <div class="course-meta"><span class="avatar">LR</span><div><strong>Luis Ragno</strong><small>Cápsula · 90 min</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
         </article>
-        <article class="card">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H4z"/><path d="M2 20h20"/><path d="M9 9l2 2 4-4"/></svg>
-          </span>
-          <h3>Talleres</h3>
-          <p>Prácticas aplicadas y colaborativas para construir escenarios y hojas de ruta paso a paso.</p>
+        <article class="course-card">
+          <span class="course-thumb tg-2"><span class="course-tag">Masterclass</span></span>
+          <div class="course-body">
+            <h3>IA aplicada a la prospectiva</h3>
+            <p>Cómo la inteligencia artificial acelera el análisis de tendencias y señales débiles.</p>
+            <div class="course-meta"><span class="avatar">JV</span><div><strong>Javier Vitale</strong><small>Cápsula · 90 min</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
         </article>
-        <article class="card">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M6.5 10v4.5c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5V10"/><path d="M21 8v5"/></svg>
-          </span>
-          <h3>Diplomados</h3>
-          <p>Programas de largo aliento con certificación, que combinan teoría, tutorías y proyecto final.</p>
+        <article class="course-card">
+          <span class="course-thumb tg-3"><span class="course-tag">Masterclass</span></span>
+          <div class="course-body">
+            <h3>Futuros del territorio</h3>
+            <p>Prospectiva territorial y bioeconomía para pensar el desarrollo regional a largo plazo.</p>
+            <div class="course-meta"><span class="avatar">SP</span><div><strong>Silvina Papagno</strong><small>Cápsula · 90 min</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
         </article>
-        <article class="card">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          </span>
-          <h3>Micromaster</h3>
-          <p>Ruta modular corta y flexible para especializarte en un dominio específico de futuros.</p>
+      </div>
+
+      <!-- TALLERES -->
+      <div class="grid grid-3 tab-panel" data-panel="talleres" hidden>
+        <article class="course-card">
+          <span class="course-thumb tg-2"><span class="course-tag">Taller</span></span>
+          <div class="course-body">
+            <h3>Mapa de actores y tendencias</h3>
+            <p>Práctica aplicada para mapear fuerzas motrices e incertidumbres críticas de un sistema.</p>
+            <div class="course-meta"><span class="avatar">CEP</span><div><strong>Equipo CEP</strong><small>Taller · 3 encuentros</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
+        </article>
+        <article class="course-card">
+          <span class="course-thumb tg-3"><span class="course-tag">Taller</span></span>
+          <div class="course-body">
+            <h3>Diseño de escenarios 2×2</h3>
+            <p>Construcción colaborativa de escenarios y su narrativa a partir de dos ejes de incertidumbre.</p>
+            <div class="course-meta"><span class="avatar">CEP</span><div><strong>Equipo CEP</strong><small>Taller · 3 encuentros</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
+        </article>
+        <article class="course-card">
+          <span class="course-thumb tg-1"><span class="course-tag">Taller</span></span>
+          <div class="course-body">
+            <h3>Hoja de ruta estratégica</h3>
+            <p>Del escenario deseado al plan: backcasting y definición de hitos accionables.</p>
+            <div class="course-meta"><span class="avatar">CEP</span><div><strong>Equipo CEP</strong><small>Taller · 3 encuentros</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- DIPLOMADOS -->
+      <div class="grid grid-3 tab-panel" data-panel="diplomados" hidden>
+        <article class="course-card">
+          <span class="course-thumb tg-3"><span class="course-tag">Diplomado</span></span>
+          <div class="course-body">
+            <h3>Prospectiva estratégica</h3>
+            <p>Programa de especialización con teoría, tutorías y proyecto final aplicado.</p>
+            <div class="course-meta"><span class="avatar">CEP</span><div><strong>Certificación CEP</strong><small>Diplomado · 4 meses</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
+        </article>
+        <article class="course-card">
+          <span class="course-thumb tg-1"><span class="course-tag">Diplomado</span></span>
+          <div class="course-body">
+            <h3>Políticas públicas y futuros</h3>
+            <p>Análisis prospectivo aplicado al diseño y evaluación de políticas públicas.</p>
+            <div class="course-meta"><span class="avatar">CEP</span><div><strong>Certificación CEP</strong><small>Diplomado · 4 meses</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
+        </article>
+        <article class="course-card">
+          <span class="course-thumb tg-2"><span class="course-tag">Diplomado</span></span>
+          <div class="course-body">
+            <h3>Gestión de la innovación</h3>
+            <p>Vigilancia estratégica e inteligencia competitiva para organizaciones.</p>
+            <div class="course-meta"><span class="avatar">CEP</span><div><strong>Certificación CEP</strong><small>Diplomado · 4 meses</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- MICROMASTER -->
+      <div class="grid grid-3 tab-panel" data-panel="micromaster" hidden>
+        <article class="course-card">
+          <span class="course-thumb tg-1"><span class="course-tag">Micromaster</span></span>
+          <div class="course-body">
+            <h3>Ruta: Futuros y sostenibilidad</h3>
+            <p>Itinerario modular corto para especializarte en futuros ambientales e hídricos.</p>
+            <div class="course-meta"><span class="avatar">CEP</span><div><strong>Programa modular</strong><small>Micromaster · flexible</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
+        </article>
+        <article class="course-card">
+          <span class="course-thumb tg-2"><span class="course-tag">Micromaster</span></span>
+          <div class="course-body">
+            <h3>Ruta: Tecnología y trabajo</h3>
+            <p>Módulos sobre IA, automatización y el futuro del trabajo y las profesiones.</p>
+            <div class="course-meta"><span class="avatar">CEP</span><div><strong>Programa modular</strong><small>Micromaster · flexible</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
+        </article>
+        <article class="course-card">
+          <span class="course-thumb tg-3"><span class="course-tag">Micromaster</span></span>
+          <div class="course-body">
+            <h3>Ruta: Gobierno y territorio</h3>
+            <p>Módulos de prospectiva territorial aplicada a la gestión pública regional.</p>
+            <div class="course-meta"><span class="avatar">CEP</span><div><strong>Programa modular</strong><small>Micromaster · flexible</small></div></div>
+            <a href="#academia" class="course-link">Ver más →</a>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ===================== NEXT GEN ===================== -->
-  <section class="section section-dark" id="nextgen">
+  <!-- ===================== 2. NEXT GEN ===================== -->
+  <section class="section section-soft" id="nextgen" style="--accent:#e5397f; --accent-soft:rgba(229,57,127,.12)">
     <div class="container">
-      <div class="section-head section-head-center">
-        <span class="kicker kicker-light">CEP Next Gen</span>
+      <div class="section-head-center">
+        <span class="kicker">02 · CEP Next Gen</span>
         <h2>Los futuros los construyen las nuevas generaciones</h2>
-        <p>
-          Un programa para jóvenes que quieren entender cómo la inteligencia artificial y
-          la automatización redefinen el trabajo, y participar en foros ágiles donde su voz
-          incide en las decisiones de hoy.
-        </p>
+        <p>Jóvenes, inteligencia artificial y trabajo, foros ágiles y un feed social que traduce la prospectiva a un lenguaje cercano.</p>
       </div>
 
-      <div class="grid grid-3">
-        <article class="card card-dark">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="7" width="14" height="12" rx="2"/><path d="M9 7V5a3 3 0 016 0v2"/><path d="M9 12h.01M15 12h.01"/></svg>
-          </span>
-          <h3>IA y trabajo</h3>
-          <p>Charlas y clínicas prácticas sobre cómo la IA transforma las profesiones y qué habilidades anticipar.</p>
+      <div class="grid grid-3 profiles">
+        <article class="profile-card">
+          <div class="profile-top pg-1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          </div>
+          <h3>Emprendedores Tech</h3>
+          <span>Innovación y nuevos negocios de base tecnológica.</span>
         </article>
-        <article class="card card-dark">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2l-3 3v-3H8"/><path d="M3 4h11a2 2 0 012 2v6a2 2 0 01-2 2H8l-3 3v-3H3z"/></svg>
-          </span>
-          <h3>Foros ágiles</h3>
-          <p>Espacios de deliberación rápida y horizontal donde los jóvenes proponen y priorizan agendas de futuro.</p>
+        <article class="profile-card">
+          <div class="profile-top pg-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg>
+          </div>
+          <h3>Líderes Digitales</h3>
+          <span>Referentes jóvenes que marcan agenda en redes.</span>
         </article>
-        <article class="card card-dark">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
-          </span>
-          <h3>Feed social</h3>
-          <p>Contenido nativo en Instagram y TikTok que traduce la prospectiva a un lenguaje cercano y actual.</p>
+        <article class="profile-card">
+          <div class="profile-top pg-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8"/></svg>
+          </div>
+          <h3>Jóvenes Investigadores</h3>
+          <span>Nueva camada de estudios de futuros en la región.</span>
         </article>
       </div>
-    </div>
-  </section>
 
-  <!-- ===================== CORPORATIVO ===================== -->
-  <section class="section" id="corporativo">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-head-text">
-          <span class="kicker">CEP Corporativo</span>
-          <h2>Consultoría estratégica y prospectiva aplicada</h2>
-          <p>
-            Acompañamos a organizaciones, gobiernos e instituciones a leer su entorno,
-            anticipar riesgos y diseñar estrategias robustas frente a la incertidumbre.
-          </p>
+      <div class="feed-head">
+        <h3 class="subhead">Social Feed</h3>
+        <div class="feed-icons">
+          <span aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></span>
+          <span aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 112.5 6 2.5 2.5 0 014.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05A4.17 4.17 0 0116.6 8.5c4 0 4.4 2.35 4.4 5.4V21h-4v-5.3c0-1.26 0-2.9-1.77-2.9s-2.03 1.38-2.03 2.8V21H9z"/></svg></span>
+          <span aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 00-7 3.7A11.6 11.6 0 013.2 4.6a4.1 4.1 0 001.3 5.5c-.7 0-1.3-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4-.6.2-1.3.2-1.9.1a4.1 4.1 0 003.8 2.9A8.2 8.2 0 012 22a11.6 11.6 0 006.3 1.8c7.5 0 11.6-6.2 11.6-11.6v-.5c.8-.6 1.5-1.3 2.1-2.2z"/></svg></span>
         </div>
       </div>
 
-      <h3 class="subhead">Líneas de consultoría</h3>
-      <div class="grid grid-3 tight">
-        <div class="line-card"><span class="dot"></span>Prospectiva ambiental</div>
-        <div class="line-card"><span class="dot"></span>Desarrollo social</div>
-        <div class="line-card"><span class="dot"></span>Prospectiva educacional</div>
-        <div class="line-card"><span class="dot"></span>Prospectiva hídrica</div>
-        <div class="line-card"><span class="dot"></span>Prospectiva jurídica</div>
-        <div class="line-card"><span class="dot"></span>Prospectiva organizacional</div>
-        <div class="line-card"><span class="dot"></span>Prospectiva tecnológica</div>
-        <div class="line-card"><span class="dot"></span>Prospectiva territorial</div>
-        <div class="line-card"><span class="dot"></span>Vigilancia estratégica</div>
+      <div class="grid grid-3 feed">
+        <article class="post-card">
+          <div class="post-head"><span class="post-avatar">CEP</span><div><strong>CEP Next Gen</strong><small>@cepcuyo</small></div></div>
+          <div class="post-media fm-1"></div>
+          <p class="post-text">Emprendedores pensando el futuro del trabajo en la región. #Prospectiva</p>
+          <div class="post-bar"><span>♥ 128</span><span>💬 24</span><span>↗ Compartir</span></div>
+        </article>
+        <article class="post-card">
+          <div class="post-head"><span class="post-avatar">CEP</span><div><strong>CEP Next Gen</strong><small>@cepcuyo</small></div></div>
+          <div class="post-media fm-2"></div>
+          <p class="post-text">Foro ágil: IA y trabajo, ¿qué habilidades anticipar? Sumate al debate.</p>
+          <div class="post-bar"><span>♥ 96</span><span>💬 18</span><span>↗ Compartir</span></div>
+        </article>
+        <article class="post-card">
+          <div class="post-head"><span class="post-avatar">CEP</span><div><strong>CEP Next Gen</strong><small>@cepcuyo</small></div></div>
+          <div class="post-media fm-3"></div>
+          <p class="post-text">Resumen del último drop: señales de futuro que no te podés perder.</p>
+          <div class="post-bar"><span>♥ 152</span><span>💬 31</span><span>↗ Compartir</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. CORPORATIVO ===================== -->
+  <section class="section" id="corporativo" style="--accent:#e8a822; --accent-soft:rgba(232,168,34,.14)">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head-text">
+          <span class="kicker">03 · CEP Corporativo</span>
+          <h2>Asesoría estratégica y análisis de políticas públicas</h2>
+          <p>Acompañamos a organizaciones, gobiernos e instituciones a anticipar riesgos y diseñar estrategias robustas frente a la incertidumbre.</p>
+        </div>
+      </div>
+
+      <div class="corp-grid">
+        <!-- Card estilo LinkedIn -->
+        <aside class="linkedin-card">
+          <div class="li-head">
+            <svg class="li-logo" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 112.5 6 2.5 2.5 0 014.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05A4.17 4.17 0 0116.6 8.5c4 0 4.4 2.35 4.4 5.4V21h-4v-5.3c0-1.26 0-2.9-1.77-2.9s-2.03 1.38-2.03 2.8V21H9z"/></svg>
+            <span>Vinculación B2B &amp; Gobierno</span>
+          </div>
+          <div class="li-profile">
+            <span class="li-avatar">CEP</span>
+            <div>
+              <strong>CEP Cuyo</strong>
+              <small>Think tank · Prospectiva &amp; políticas públicas</small>
+            </div>
+          </div>
+          <div class="li-stats">
+            <div><strong>750+</strong><span>Conexiones</span></div>
+            <div><strong>23+</strong><span>Alianzas</span></div>
+            <div><strong>30+</strong><span>Proyectos</span></div>
+          </div>
+          <a href="#corporativo" class="btn btn-teal btn-block">Conectar en LinkedIn</a>
+        </aside>
+
+        <!-- Líneas de consultoría -->
+        <div class="corp-lines">
+          <h3 class="subhead">Líneas de consultoría</h3>
+          <div class="grid grid-3 tight">
+            <div class="line-card"><span class="dot"></span>Prospectiva ambiental</div>
+            <div class="line-card"><span class="dot"></span>Desarrollo social</div>
+            <div class="line-card"><span class="dot"></span>Prospectiva educacional</div>
+            <div class="line-card"><span class="dot"></span>Prospectiva hídrica</div>
+            <div class="line-card"><span class="dot"></span>Prospectiva jurídica</div>
+            <div class="line-card"><span class="dot"></span>Prospectiva organizacional</div>
+            <div class="line-card"><span class="dot"></span>Prospectiva tecnológica</div>
+            <div class="line-card"><span class="dot"></span>Prospectiva territorial</div>
+            <div class="line-card"><span class="dot"></span>Vigilancia estratégica</div>
+          </div>
+        </div>
       </div>
 
       <h3 class="subhead subhead-spaced">Alianzas estratégicas</h3>
       <p class="subhead-note">Formamos parte e integramos redes internacionales de estudios de futuros.</p>
       <div class="grid grid-3 tight allies">
-        <div class="ally-card">
-          <strong>WFSF</strong>
-          <span>World Futures Studies Federation</span>
-        </div>
-        <div class="ally-card">
-          <strong>The Millennium Project</strong>
-          <span>Red global de think tanks de futuros</span>
-        </div>
-        <div class="ally-card">
-          <strong>RIBER</strong>
-          <span>Red Iberoamericana de Prospectiva</span>
-        </div>
-        <div class="ally-card">
-          <strong>RedLatamPP</strong>
-          <span>Red Latinoamericana de Políticas Públicas</span>
-        </div>
-        <div class="ally-card">
-          <strong>Global Water Partnership</strong>
-          <span>Alianza internacional del agua</span>
-        </div>
-        <div class="ally-card">
-          <strong>Red Argentina de Futuros</strong>
-          <span>Estudios de futuros a nivel nacional</span>
-        </div>
+        <div class="ally-card"><strong>WFSF</strong><span>World Futures Studies Federation</span></div>
+        <div class="ally-card"><strong>The Millennium Project</strong><span>Red global de think tanks de futuros</span></div>
+        <div class="ally-card"><strong>RIBER</strong><span>Red Iberoamericana de Prospectiva</span></div>
+        <div class="ally-card"><strong>RedLatamPP</strong><span>Red Latinoamericana de Políticas Públicas</span></div>
+        <div class="ally-card"><strong>Global Water Partnership</strong><span>Alianza internacional del agua</span></div>
+        <div class="ally-card"><strong>Red Argentina de Futuros</strong><span>Estudios de futuros a nivel nacional</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== MEMBERS ===================== -->
-  <section class="section section-muted" id="members">
+  <!-- ===================== 4. MEMBERS ===================== -->
+  <section class="section section-mint" id="members" style="--accent:#12a594; --accent-soft:rgba(18,165,148,.14)">
     <div class="container">
       <div class="section-head">
         <div class="section-head-text">
-          <span class="kicker">CEP Members</span>
-          <h2>Accedé al repositorio y a la comunidad prospectiva</h2>
-          <p>
-            Papers, estudios estratégicos, grabaciones y contenido exclusivo. Elegí el
-            nivel que acompaña tu recorrido — desde el acceso individual hasta el plan
-            institucional para equipos.
-          </p>
+          <span class="kicker">04 · CEP Members</span>
+          <h2>Repositorio con embargo dinámico de 6 meses</h2>
+          <p>El contenido más reciente es exclusivo para socios; a los 6 meses se libera al público con registro. Elegí el nivel que acompaña tu recorrido.</p>
         </div>
         <img src="assets/img/logo-repositorio-cep.png" alt="Logo Repositorio CEP Cuyo" class="section-brand section-brand-boxed" />
+      </div>
+
+      <!-- Timeline de paywall -->
+      <div class="paywall">
+        <div class="paywall-zone zone-lock">
+          <span class="zone-tag"><span class="lock" aria-hidden="true"></span> Zona Novedades · 0 a 6 meses</span>
+          <strong>Exclusivo CEP Members</strong>
+          <p>Artículos recientes, papers de vanguardia, bases de datos vivas y acceso directo a autores.</p>
+        </div>
+        <div class="paywall-arrow" aria-hidden="true">→</div>
+        <div class="paywall-zone zone-open">
+          <span class="zone-tag zone-tag-open"><span class="unlock" aria-hidden="true"></span> Zona Histórica · +6 meses</span>
+          <strong>Acceso gratuito con registro</strong>
+          <p>Publicaciones de 6 meses o más, en abierto. Requiere suscripción al newsletter “El Radar CEP”.</p>
+        </div>
+      </div>
+
+      <div class="timeline" aria-hidden="true">
+        <div class="tl-step"><span class="tl-dot"></span><small>Mes 1<br>Contenido</small></div>
+        <div class="tl-step"><span class="tl-dot"></span><small>Mes 2<br>Comunidad</small></div>
+        <div class="tl-step"><span class="tl-dot"></span><small>Mes 3<br>Eventos</small></div>
+        <div class="tl-step"><span class="tl-dot"></span><small>Mes 4<br>Hitos</small></div>
+        <div class="tl-step tl-release"><span class="tl-dot"></span><small>Mes 6<br>Se libera</small></div>
       </div>
 
       <div class="grid grid-3 pricing">
@@ -233,13 +388,12 @@
           <p class="plan-price"><span>$</span>—<small>/mes</small></p>
           <ul>
             <li>Acceso a contenido con +180 días</li>
-            <li>Newsletter "El Radar CEP"</li>
+            <li>Newsletter “El Radar CEP”</li>
             <li>Grilla pública del repositorio</li>
             <li>Comunidad de WhatsApp</li>
           </ul>
           <button class="btn btn-outline btn-block" disabled>Próximamente</button>
         </article>
-
         <article class="plan plan-featured">
           <span class="plan-badge">Más elegido</span>
           <h3>Profesional</h3>
@@ -252,7 +406,6 @@
           </ul>
           <button class="btn btn-teal btn-block" disabled>Próximamente</button>
         </article>
-
         <article class="plan">
           <h3>Corporativo</h3>
           <p class="plan-price"><span>$</span>—<small>/mes</small></p>
@@ -265,51 +418,56 @@
           <button class="btn btn-outline btn-block" disabled>Próximamente</button>
         </article>
       </div>
-      <p class="proto-note">Prototipo · la suscripción y los pagos se habilitan en una fase posterior.</p>
+      <p class="proto-note">Prototipo · la suscripción y los pagos (Mercado Pago + Stripe) se habilitan en una fase posterior.</p>
     </div>
   </section>
 
-  <!-- ===================== MEDIA ===================== -->
-  <section class="section" id="media">
+  <!-- ===================== 5. MEDIA ===================== -->
+  <section class="section" id="media" style="--accent:#ef4444; --accent-soft:rgba(239,68,68,.12)">
     <div class="container">
-      <div class="section-head section-head-center">
-        <span class="kicker">CEP Media</span>
-        <h2>Divulgamos los futuros en todos los canales</h2>
-        <p>Entrevistas, webinars y contenido en video para acercar la prospectiva a más audiencias.</p>
+      <div class="section-head-center">
+        <span class="kicker">05 · CEP Media</span>
+        <h2>Videopodcast y hub de contenidos</h2>
+        <p>Entrevistas a fondo con referentes de prospectiva y futuros, más un plan editorial constante en todos los canales.</p>
       </div>
 
-      <div class="grid grid-3 videos">
-        <a class="video-card" href="#media" aria-label="Video próximamente">
-          <span class="thumb"><span class="play" aria-hidden="true"></span></span>
-          <h3>Súbete al Tren de la IA</h3>
-          <small>Webinar · CEP Cuyo</small>
+      <div class="media-player">
+        <a class="media-feature" href="#media" aria-label="Reproducir episodio">
+          <span class="media-thumb">
+            <span class="play play-yt" aria-hidden="true"></span>
+            <span class="media-badge">Ep. 24</span>
+          </span>
+          <div class="media-caption">
+            <strong>Perspectivas Económicas Cuyo</strong>
+            <small>YouTube Interview Podcast · CEP Cuyo</small>
+          </div>
         </a>
-        <a class="video-card" href="#media" aria-label="Video próximamente">
-          <span class="thumb"><span class="play" aria-hidden="true"></span></span>
-          <h3>Liderazgo Prospectivo 5.0</h3>
-          <small>Entrevista · CEP Cuyo</small>
-        </a>
-        <a class="video-card" href="#media" aria-label="Video próximamente">
-          <span class="thumb"><span class="play" aria-hidden="true"></span></span>
-          <h3>Summit 2026: futuros del desarrollo</h3>
-          <small>Panel · RedLatamPP</small>
-        </a>
+        <div class="media-list">
+          <h3 class="subhead">Últimos episodios</h3>
+          <a href="#media" class="media-item"><span class="mi-num">24</span><div><strong>Perspectivas Económicas Cuyo</strong><small>Abr 29, 2026</small></div></a>
+          <a href="#media" class="media-item"><span class="mi-num">23</span><div><strong>Futuros del desarrollo territorial</strong><small>Abr 15, 2026</small></div></a>
+          <a href="#media" class="media-item"><span class="mi-num">22</span><div><strong>IA, trabajo y nuevas profesiones</strong><small>Abr 01, 2026</small></div></a>
+        </div>
       </div>
 
       <div class="social-hub">
-        <a href="https://facebook.com/cepcuyo" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg>
-          <span>Facebook</span>
+        <a href="https://youtube.com/@cepcuyo" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 001.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l6 3.3-6 3.3z"/></svg>
+          <span>@cepcuyo</span>
         </a>
         <a href="https://instagram.com/cepcuyo" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
           <span>@cepcuyo</span>
         </a>
-        <a href="https://youtube.com/@cepcuyo" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 001.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l6 3.3-6 3.3z"/></svg>
-          <span>@cepcuyo</span>
+        <a href="https://facebook.com/cepcuyo" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg>
+          <span>Facebook</span>
         </a>
-        <a href="#members" class="social-btn" aria-label="WhatsApp">
+        <a href="#media" class="social-btn" aria-label="Spotify">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.6.6 0 01-.9.2c-2.4-1.5-5.5-1.8-9.1-1a.6.6 0 11-.3-1.2c3.9-.9 7.4-.5 10.1 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 01-1 .3c-2.8-1.7-7-2.2-10.3-1.2a.8.8 0 11-.4-1.5c3.8-1.1 8.4-.6 11.6 1.4.3.2.5.7.1 1zm.1-2.8C14.6 8.1 9 7.9 5.8 8.9a.9.9 0 11-.5-1.8c3.7-1.1 9.9-.9 13.8 1.4a.9.9 0 11-.9 1.6z"/></svg>
+          <span>Spotify</span>
+        </a>
+        <a href="#media" class="social-btn" aria-label="WhatsApp">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3.1-1.3-5.1-4.4-5.3-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.9-.2 1.7z"/></svg>
           <span>Comunidad</span>
         </a>
@@ -318,7 +476,7 @@
   </section>
 
   <!-- ===================== NOSOTROS ===================== -->
-  <section class="section section-muted" id="nosotros">
+  <section class="section section-soft" id="nosotros" style="--accent:#12a594; --accent-soft:rgba(18,165,148,.12)">
     <div class="container">
       <div class="about">
         <figure class="about-figure">
@@ -341,8 +499,7 @@
           <p>
             El equipo reúne referentes como <strong>Javier Vitale</strong>, investigador
             del INTA y miembro del Comité Ejecutivo de la WFSF, y <strong>Silvina
-            Papagno</strong>, especialista en prospectiva territorial y bioeconomía, entre
-            otros profesionales de distintas disciplinas.
+            Papagno</strong>, especialista en prospectiva territorial y bioeconomía.
           </p>
           <a href="#corporativo" class="btn btn-teal">Trabajar con nosotros</a>
         </div>
@@ -366,13 +523,12 @@
       </div>
 
       <nav class="footer-nav" aria-label="Secciones">
-        <h4>Secciones</h4>
-        <a href="#academia">Academia</a>
-        <a href="#nextgen">Next Gen</a>
-        <a href="#corporativo">Corporativo</a>
-        <a href="#members">Members</a>
-        <a href="#media">Media</a>
-        <a href="#nosotros">Nosotros</a>
+        <h4>Ecosistema</h4>
+        <a href="#academia">CEP Academia</a>
+        <a href="#nextgen">CEP Next Gen</a>
+        <a href="#corporativo">CEP Corporativo</a>
+        <a href="#members">CEP Members</a>
+        <a href="#media">CEP Media</a>
       </nav>
 
       <div class="footer-contact">
@@ -387,7 +543,7 @@
     <div class="footer-bottom">
       <div class="container">
         <span>© 2004–2026 CEP Cuyo · Centro de Estudios Prospectivos de Cuyo</span>
-        <span class="proto-tag">Prototipo de rediseño</span>
+        <span class="proto-tag">Prototipo de rediseño · CEP Cuyo 3.0</span>
       </div>
     </div>
   </footer>
@@ -413,6 +569,25 @@
     var header = document.querySelector('.site-header');
     window.addEventListener('scroll', function () {
       header.classList.toggle('scrolled', window.scrollY > 12);
+    });
+
+    // Tabs de Academia
+    var tabs = document.querySelectorAll('#academiaTabs .tab');
+    var panels = document.querySelectorAll('#academia .tab-panel');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var name = tab.getAttribute('data-tab');
+        tabs.forEach(function (t) {
+          var active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach(function (p) {
+          var match = p.getAttribute('data-panel') === name;
+          p.classList.toggle('is-active', match);
+          p.hidden = !match;
+        });
+      });
     });
   </script>
 </body>
